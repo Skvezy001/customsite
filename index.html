@@ -6,9 +6,8 @@
         <script>
             function myFunction() {
                 const val = fetch('https://fleetcor-eu--dev015.sandbox.my.site.com/resource/ChatEmail')
-                .then(function(data) {
-                        return data
-                    }
+                .then((data) => {
+                    return data;
                 })
                 .catch((error) => console.log('Error message: ' + error.message));
                 if(val) {
