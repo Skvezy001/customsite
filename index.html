@@ -6,6 +6,7 @@
         <script>
             async function myFunction() {
                 const val = await fetch('https://fleetcor-eu--dev015.sandbox.my.site.com/resource/ChatEmail')
+                .then((response) => response.json())
                 .then((data) => {
                     return data.email;
                 })
