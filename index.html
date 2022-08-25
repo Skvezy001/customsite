@@ -11,10 +11,11 @@
                     return data.email;
                 })
                 .catch((error) => console.log('Error message: ' + error.message));
-                console.log(val)
-                if( ! val) {
-                    console.log('No email value, load correct data to static resource "ChatEmail"');
+                let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                if(val && val.value.match(mailformat)) {
+                    console.log('Email is correct');
                 }
+                console.log('No email value, load correct data to static resource "ChatEmail"');
             }
         </script>
         <h2>Demo JavaScript in Head</h2>
