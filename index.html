@@ -3,15 +3,13 @@
     <head>
         <script>
             function myFunction() {
-                let data;
+                let sendEmail;
                 fetch('https://fleetcor-eu--dev015.sandbox.my.site.com/resource/ChatEmail')
-                .then(response => {
-                    data = JSON.stringify(response.json());
-                    console.log('data === ' + data);
-                }).catch(err => {
-                    console.log('Error message: ' + err.message);
+                .then((data) => sendEmail = data)
+                .catch((error) => {
+                    console.log('Error message: ' + error.message);
                 });
-                if(data.email) {
+                if(sendEmail.email) {
                     queueEmail.value = data.email;
                     console.log('queueEmail.value === ' + queueEmail.value);
                 } else {
