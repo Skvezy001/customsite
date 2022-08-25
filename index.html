@@ -6,15 +6,12 @@
                 let sendEmail;
                 fetch('https://fleetcor-eu--dev015.sandbox.my.site.com/resource/ChatEmail')
                 .then((response) => response.json())
-                .then((data) => {
-                    sendEmail = data;
-                    console.log(sendEmail);
-                })
+                .then((data) => sendEmail = data;)
                 .catch((error) => {
                     console.log('Error message: ' + error.message);
                 });
-                if(sendEmail.email) {
-                    queueEmail.value = sendEmail.email;
+                if(sendEmail['email']) {
+                    queueEmail.value = sendEmail['email'];
                     console.log('queueEmail.value === ' + queueEmail.value);
                 } else {
                     console.log('No email value, load correct data to static resource "ChatEmail"');
