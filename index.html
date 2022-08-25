@@ -4,22 +4,16 @@
     </head>
     <body>
         <script>
-            async function myFunction() {
-                let response = await fetch('https://fleetcor-eu--dev015.sandbox.my.site.com/resource/ChatEmail');
-                let data = await response.text();
-                console.log(data.email);
-                console.log(data['email']);
-//                 fetch('https://fleetcor-eu--dev015.sandbox.my.site.com/resource/ChatEmail')
-//                 .then((response) => response.json())
-//                 .then((data) => sendEmail = data)
-//                 .catch((error) => console.log('Error message: ' + error.message));
-//                 console.log(sendEmail);
-//                 if(sendEmail['email']) {
-//                     queueEmail.value = sendEmail['email'];
-//                     console.log('queueEmail.value === ' + queueEmail.value);
-//                 } else {
-//                     console.log('No email value, load correct data to static resource "ChatEmail"');
-//                 }
+            function myFunction() {
+                const val = fetch('https://fleetcor-eu--dev015.sandbox.my.site.com/resource/ChatEmail')
+                .then((response) => response.json())
+                .then((data) => return data)
+                .catch((error) => console.log('Error message: ' + error.message));
+                if(val) {
+                    console.log(val.email);
+                } else {
+                    console.log('No email value, load correct data to static resource "ChatEmail"');
+                }
             }
         </script>
         <h2>Demo JavaScript in Head</h2>
