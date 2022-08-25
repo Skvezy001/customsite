@@ -6,7 +6,10 @@
                 let sendEmail;
                 fetch('https://fleetcor-eu--dev015.sandbox.my.site.com/resource/ChatEmail')
                 .then((response) => response.json())
-                .then((data) => sendEmail = data)
+                .then((data) => {
+                    sendEmail = data;
+                    console.log(sendEmail);
+                })
                 .catch((error) => {
                     console.log('Error message: ' + error.message);
                 });
