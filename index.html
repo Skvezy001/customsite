@@ -10,7 +10,7 @@
                     console.log('Error message: ' + error.message);
                 });
                 if(sendEmail.email) {
-                    queueEmail.value = data.email;
+                    queueEmail.value = sendEmail.email;
                     console.log('queueEmail.value === ' + queueEmail.value);
                 } else {
                     console.log('No email value, load correct data to static resource "ChatEmail"');
