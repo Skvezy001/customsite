@@ -4,14 +4,15 @@
     </head>
     <body>
         <script>
-            function myFunction() {
-                let queueEmail = {};
-                let sendEmail;
-                fetch('https://fleetcor-eu--dev015.sandbox.my.site.com/resource/ChatEmail')
-                .then((response) => response.json())
-                .then((data) => sendEmail = data)
-                .catch((error) => console.log('Error message: ' + error.message));
-                console.log(sendEmail);
+            async function myFunction() {
+                let response = await fetch('https://fleetcor-eu--dev015.sandbox.my.site.com/resource/ChatEmail');
+                let data = await response.text();
+                console.log(data)
+//                 fetch('https://fleetcor-eu--dev015.sandbox.my.site.com/resource/ChatEmail')
+//                 .then((response) => response.json())
+//                 .then((data) => sendEmail = data)
+//                 .catch((error) => console.log('Error message: ' + error.message));
+//                 console.log(sendEmail);
 //                 if(sendEmail['email']) {
 //                     queueEmail.value = sendEmail['email'];
 //                     console.log('queueEmail.value === ' + queueEmail.value);
