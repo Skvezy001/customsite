@@ -6,7 +6,7 @@
                 let data;
                 fetch('https://fleetcor-eu--dev015.sandbox.my.site.com/resource/ChatEmail')
                 .then(response => {
-                    data = JSON.stringify(response);
+                    data = JSON.stringify(response.json());
                     console.log('data === ' + data);
                 }).catch(err => {
                     console.log('Error message: ' + err.message);
