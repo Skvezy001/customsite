@@ -6,16 +6,17 @@
         <script>
             function myFunction() {
                 const val = fetch('https://fleetcor-eu--dev015.sandbox.my.site.com/resource/ChatEmail')
+                .then((response) => response.json())
                 .then((data) => {
                     return data;
                 })
                 .catch((error) => console.log('Error message: ' + error.message));
                 console.log(val)
-//                 if(val) {
-//                     console.log(val.email);
-//                 } else {
-//                     console.log('No email value, load correct data to static resource "ChatEmail"');
-//                 }
+                if(val) {
+                    console.log(val.email);
+                } else {
+                    console.log('No email value, load correct data to static resource "ChatEmail"');
+                }
             }
         </script>
         <h2>Demo JavaScript in Head</h2>
