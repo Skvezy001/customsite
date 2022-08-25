@@ -6,11 +6,8 @@
                 let queueEmail = {};
                 let sendEmail;
                 fetch('https://fleetcor-eu--dev015.sandbox.my.site.com/resource/ChatEmail')
-                .then((response) => response.json())
                 .then((data) => sendEmail = data;)
-                .catch((error) => {
-                    console.log('Error message: ' + error.message);
-                });
+                .catch((error) => console.log('Error message: ' + error.message););
                 if(sendEmail['email']) {
                     queueEmail.value = sendEmail['email'];
                     console.log('queueEmail.value === ' + queueEmail.value);
