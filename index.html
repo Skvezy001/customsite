@@ -4,18 +4,15 @@
     </head>
     <body>
         <script>
-            function myFunction() {
-                const val = fetch('https://fleetcor-eu--dev015.sandbox.my.site.com/resource/ChatEmail')
+            async function myFunction() {
+                const val = await fetch('https://fleetcor-eu--dev015.sandbox.my.site.com/resource/ChatEmail')
                 .then((response) => response.json())
                 .then((data) => {
-                    console.log(data.email);
                     return data.email;
                 })
                 .catch((error) => console.log('Error message: ' + error.message));
                 console.log(val)
-                if(val) {
-                    console.log(val.email);
-                } else {
+                if( ! val) {
                     console.log('No email value, load correct data to static resource "ChatEmail"');
                 }
             }
